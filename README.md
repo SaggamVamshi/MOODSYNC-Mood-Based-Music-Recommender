@@ -42,6 +42,6 @@ MoodSync is a responsive web application that recommends music based on the user
 
 The purpose of MoodSync is to provide a simple and interactive music recommendation experience based on the user's current mood.
 
-## Author
+## Saggam Vamshi
 
 Your Name
