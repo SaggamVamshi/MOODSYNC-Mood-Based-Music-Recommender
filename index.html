@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoodSync - Emotion Based Music Recommender</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Face API -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+    <script defer src="songs.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>🎵</span>
+            MoodSync
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#favorites">Favorites</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">YOUR MOOD. YOUR MUSIC.</p>
+
+            <h1>
+                Music that matches
+                <span>your mood.</span>
+            </h1>
+
+            <p class="hero-text">
+                Select your mood or let MoodSync detect your emotion
+                using your webcam and discover music that fits your mood.
+            </p>
+
+            <a href="#mood-section" class="primary-btn">
+                Find My Music
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            🎧
+        </div>
+
+    </section>
+
+
+    <!-- Mood Section -->
+    <section class="mood-section" id="mood-section">
+
+        <div class="section-heading">
+            <p class="small-title">CHOOSE YOUR EXPERIENCE</p>
+
+            <h2>
+                How are you feeling?
+            </h2>
+
+            <p>
+                Choose your mood manually or use your webcam.
+            </p>
+        </div>
+
+
+        <!-- Mode Buttons -->
+        <div class="mode-buttons">
+
+            <button id="manualModeBtn" class="mode-btn active">
+                🎯 Select Mood
+            </button>
+
+            <button id="cameraModeBtn" class="mode-btn">
+                📷 Detect Emotion
+            </button>
+
+        </div>
+
+
+        <!-- Manual Mood -->
+        <div id="manualMode" class="mode-container">
+
+            <div class="mood-grid">
+
+                <button class="mood-card" data-mood="happy">
+                    <span>😊</span>
+                    <strong>Happy</strong>
+                    <small>Feel-good vibes</small>
+                </button>
+
+                <button class="mood-card" data-mood="sad">
+                    <span>😢</span>
+                    <strong>Sad</strong>
+                    <small>Emotional melodies</small>
+                </button>
+
+                <button class="mood-card" data-mood="calm">
+                    <span>😌</span>
+                    <strong>Calm</strong>
+                    <small>Peaceful sounds</small>
+                </button>
+
+                <button class="mood-card" data-mood="angry">
+                    <span>😡</span>
+                    <strong>Angry</strong>
+                    <small>Release the energy</small>
+                </button>
+
+                <button class="mood-card" data-mood="romantic">
+                    <span>😍</span>
+                    <strong>Romantic</strong>
+                    <small>Love is in the air</small>
+                </button>
+
+                <button class="mood-card" data-mood="energetic">
+                    <span>⚡</span>
+                    <strong>Energetic</strong>
+                    <small>Boost your energy</small>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Camera Mode -->
+        <div id="cameraMode" class="mode-container hidden">
+
+            <div class="camera-container">
+
+                <div class="camera-wrapper">
+
+                    <video
+                        id="video"
+                        autoplay
+                        muted
+                        playsinline>
+                    </video>
+
+                    <div class="camera-overlay">
+                        <div class="face-frame"></div>
+                    </div>
+
+                </div>
+
+                </div>
+
+                <div id="detectedEmotion" class="detected-emotion hidden">
+
+                    <span id="emotionEmoji">😊</span>
+
+                    <div>
+                        <small>DETECTED MOOD</small>
+                        <h3 id="emotionText">Happy</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Recommendations -->
+    <section class="recommendations" id="recommendations">
+
+        <div class="section-heading">
+
+            <p class="small-title">PERSONALIZED FOR YOU</p>
+
+            <h2 id="recommendationTitle">
+                Recommended Music
+            </h2>
+
+            <p id="recommendationSubtitle">
+                Select a mood to see recommendations.
+            </p>
+
+        </div>
+
+
+        <div id="songGrid" class="song-grid">
+
+            <div class="empty-state">
+
+                <span>🎧</span>
+
+                <h3>No mood selected</h3>
+
+                <p>
+                    Choose a mood above to discover music.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Favorites -->
+    <section class="favorites-section" id="favorites">
+
+        <div class="section-heading">
+
+            <p class="small-title">YOUR COLLECTION</p>
+
+            <h2>Favorite Songs</h2>
+
+        </div>
+
+        <div id="favoritesGrid" class="song-grid">
+
+            <div class="empty-state">
+
+                <span>❤️</span>
+
+                <h3>No favorites yet</h3>
+
+                <p>
+                    Click the heart on a song to add it here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🎵 MoodSync
+        </div>
+
+        <p>
+            Discover music that matches your mood.
+        </p>
+
+        <p class="copyright">
+            © 2026 MoodSync. Built for learning and portfolio purposes.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+just keep select mood remove detect emotion and keep all features 

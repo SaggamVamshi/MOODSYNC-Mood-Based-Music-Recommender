@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b12;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #242431;
+    background: rgba(11, 11, 18, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    font-size: 26px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #b8b8c7;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 560px;
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:
+        radial-gradient(circle at 75% 40%, rgba(122, 76, 255, 0.25), transparent 35%),
+        #0b0b12;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline,
+.small-title {
+    color: #a98cff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #a98cff;
+}
+
+.hero-text {
+    max-width: 560px;
+    color: #a9a9b8;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-icon {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    background: radial-gradient(circle, #302064, #151522);
+    box-shadow: 0 0 80px rgba(122, 76, 255, 0.25);
+}
+
+
+/* BUTTONS */
+
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: white;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: #7655e8;
+}
+
+.primary-btn:hover {
+    background: #8769f0;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #272735;
+}
+
+.secondary-btn:hover {
+    background: #353547;
+}
+
+.danger-btn {
+    background: #9d3546;
+}
+
+.danger-btn:hover {
+    background: #b33e50;
+}
+
+
+/* SECTIONS */
+
+.mood-section,
+.recommendations,
+.favorites-section {
+    padding: 90px 8%;
+}
+
+.mood-section {
+    background: #101018;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-heading > p:last-child {
+    color: #9c9cab;
+}
+
+
+/* MODE BUTTONS */
+
+.mode-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.mode-btn {
+    border: 1px solid #2c2c3a;
+    background: #171720;
+    color: #aaaabb;
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.mode-btn.active {
+    background: #7655e8;
+    color: #ffffff;
+    border-color: #7655e8;
+}
+
+
+/* MOOD CARDS */
+
+.mood-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.mood-card {
+    border: 1px solid #292936;
+    background: #171720;
+    color: #ffffff;
+    padding: 30px 15px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.mood-card span {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.mood-card strong {
+    font-size: 18px;
+}
+
+.mood-card small {
+    color: #9292a2;
+}
+
+.mood-card:hover {
+    border-color: #7655e8;
+    transform: translateY(-4px);
+}
+
+.mood-card.selected {
+    border-color: #a98cff;
+    background: #211936;
+    box-shadow: 0 0 25px rgba(118, 85, 232, 0.2);
+}
+
+
+/* CAMERA */
+
+.camera-container {
+    max-width: 760px;
+    margin: auto;
+    text-align: center;
+}
+
+.camera-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #050508;
+    border: 1px solid #2c2c3a;
+}
+
+#video {
+    display: block;
+    width: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.camera-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-frame {
+    width: 220px;
+    height: 280px;
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    border-radius: 45%;
+}
+
+.camera-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 22px 0;
+}
+
+.camera-status {
+    color: #9999aa;
+    font-size: 14px;
+}
+
+.detected-emotion {
+    margin: 25px auto 0;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background: #1a1725;
+    border: 1px solid #3c315d;
+    border-radius: 15px;
+}
+
+.detected-emotion > span {
+    font-size: 45px;
+}
+
+.detected-emotion small {
+    color: #9292a2;
+    letter-spacing: 1px;
+}
+
+.detected-emotion h3 {
+    font-size: 22px;
+}
+
+
+/* SONG GRID */
+
+.song-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.song-card {
+    background: #171720;
+    border: 1px solid #292936;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.2s;
+}
+
+.song-card:hover {
+    transform: translateY(-4px);
+    border-color: #7655e8;
+}
+
+.song-art {
+    height: 150px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    background: linear-gradient(135deg, #2a2147, #161620);
+    margin-bottom: 15px;
+}
+
+.song-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.song-title {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.song-artist {
+    color: #9898a8;
+    font-size: 13px;
+}
+
+.song-meta {
+    color: #777789;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.song-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.song-actions button {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    padding: 9px;
+    background: #292936;
+    color: #ffffff;
+}
+
+.song-actions button:hover {
+    background: #7655e8;
+}
+
+.favorite-btn {
+    max-width: 45px;
+}
+
+.favorite-btn.active {
+    color: #ff6c87;
+}
+
+
+/* EMPTY STATE */
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #8f8f9e;
+}
+
+.empty-state span {
+    display: block;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: #07070c;
+    border-top: 1px solid #22222e;
+    color: #8f8f9f;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+
+/* UTILITY */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        text-align: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-icon {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .mood-section,
+    .recommendations,
+    .favorites-section {
+        padding: 65px 5%;
+    }
+
+    .mood-grid,
+    .song-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .mode-buttons {
+        flex-direction: column;
+    }
+
+    .mode-btn {
+        width: 100%;
+    }
+
+    #video {
+        min-height: 260px;
+    }
+
+    .face-frame {
+        width: 150px;
+        height: 200px;
+    }
+}
