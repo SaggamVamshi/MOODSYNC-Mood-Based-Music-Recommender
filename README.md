@@ -28,9 +28,11 @@ MoodSync is a responsive web application that recommends music based on the user
 - ❤️ Romantic
 - ⚡ Energetic
 
-## How to Run
+## 🚀 How to Run
 
-1. Clone the repository.
+1. Clone the Repository
+ - git clone https://github.com/SaggamVamshi/MOODSYNC-Mood-Based-Music-Recommender.git
+
 2. Open the project in VS Code.
 3. Open `index.html` with Live Server.
 4. Select or type a mood.
